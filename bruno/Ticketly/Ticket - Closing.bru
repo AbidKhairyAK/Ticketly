@@ -1,0 +1,18 @@
+meta {
+  name: Ticket - Closing
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{server_address}}/api/tickets/close
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "ticket_id": 6,
+    "email": "user3@doculazer.com"
+  }
+}

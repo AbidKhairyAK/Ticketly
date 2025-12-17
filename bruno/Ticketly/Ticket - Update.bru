@@ -1,0 +1,21 @@
+meta {
+  name: Ticket - Update
+  type: http
+  seq: 6
+}
+
+patch {
+  url: {{server_address}}/api/tickets/update
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "ticket_id": 6,
+    "email": "user3@doculazer.com",
+    "title": "contoh update ho oh",
+    "description": "yolo",
+    "priority": "low"
+  }
+}

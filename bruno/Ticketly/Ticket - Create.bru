@@ -1,0 +1,20 @@
+meta {
+  name: Ticket - Create
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{server_address}}/api/tickets/create
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "title": "new ho oh oh",
+    "description": "halo",
+    "priority": "low",
+    "email": "user3@doculazer.com"
+  }
+}

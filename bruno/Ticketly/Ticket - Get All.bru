@@ -1,0 +1,15 @@
+meta {
+  name: Ticket - Get All
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{server_address}}/api/tickets/by-email/:email
+  body: none
+  auth: inherit
+}
+
+params:path {
+  email: user@doculazer.com
+}

@@ -17,11 +17,15 @@ class TicketController extends Controller
      */
     public function index()
     {
-        $tickets = Ticket::with('user')->orderBy('created_at', 'desc')->simplePaginate(5);
-        if (request()->has('priority')) {
-            $filtered = Ticket::with('user')->where('priority', request('priority'))->orderBy('created_at', 'desc')->simplePaginate(5);
-            return view('tickets.index', ['tickets' => $filtered]);
-        }
+        $tickets = Ticket::with('user')
+            ->when(Auth::user()->role != 'admin', function ($query) {
+                $query->where('user_id', Auth::user()->id);
+            })
+            ->when(request()->has('priority'), function ($query) {
+                $query->where('priority', request('priority'));
+            })
+            ->orderBy('created_at', 'desc')
+            ->simplePaginate(5);
 
         return view('tickets.index', ['tickets' => $tickets]);
     }

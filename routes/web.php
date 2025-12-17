@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TicketController;
+use App\Http\Controllers\Api\TicketApiController;
 use App\Http\Controllers\CommentController;
 
 Route::get('/', function () {

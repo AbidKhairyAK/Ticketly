@@ -1,0 +1,16 @@
+meta {
+  name: Ticket - Search
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{server_address}}/api/tickets/search/:email/:query
+  body: none
+  auth: inherit
+}
+
+params:path {
+  query: ho oh
+  email: user3@doculazer.com
+}

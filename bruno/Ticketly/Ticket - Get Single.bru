@@ -1,0 +1,15 @@
+meta {
+  name: Ticket - Get Single
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{server_address}}/api/tickets/:ticket_id
+  body: none
+  auth: inherit
+}
+
+params:path {
+  ticket_id: 1
+}
