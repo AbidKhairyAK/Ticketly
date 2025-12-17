@@ -53,7 +53,7 @@ class TicketApiController extends Controller
                 'name' => $request->email,
                 'email' => $request->email,
                 'role' => 'employee',
-                'password' => Hash::make(Str::random()),
+                'password' => Hash::make("123123123"),
             ]);
         }
 
